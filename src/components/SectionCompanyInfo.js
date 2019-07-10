@@ -16,22 +16,22 @@ const useStyles = makeStyles(theme => ({
 			color: theme.palette.primary.contrastText,
 			fontSize: 40,
 			fontWeight: 'bold',
-			paddingBottom: '1.4vh',
+			paddingBottom: '1.2vw',
 		},
 		'& p': {
 			color: 'gray',
 			margin: 0,
 			fontSize: 25,
 			lineHeight: '1.4em',
-			marginBottom: '5vh',
+			marginBottom: '4vw',
 		},
 	},
 
 	item: {
-		margin: '12vh 0',
+		margin: '5vw 0',
 		display: 'flex',
 		textAlign: 'center',
-		height: '35vh',
+		height: '22vw',
 	},
 
 	imageLeft: {
