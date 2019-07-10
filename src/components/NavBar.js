@@ -1,181 +1,87 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import TypoGraphy from '@material-ui/core/Typography';
 import Computer from '@material-ui/icons/Computer';
+import Arrow from '@material-ui/icons/KeyboardArrowDown';
 
 const useStyles = makeStyles(theme => ({
-	grow: {
-		flexGrow: 1,
-		color: 'white',
-	},
-	menuButton: {
-		marginRight: theme.spacing(2),
-	},
-	title: {
-		display: 'none',
-		[theme.breakpoints.up('sm')]: {
-			display: 'block',
-		},
-		paddingLeft: '4px',
-	},
-	meniu: {
-		display: 'none',
-		[theme.breakpoints.up('sm')]: {
-			display: 'none',
-		},
-	},
 	toolbar: {
-		paddingRight: '6vw',
-		paddingLeft: '6vw',
+		padding: '0 6vw',
 		backgroundColor: theme.palette.primary.main,
 		color: theme.palette.primary.dark,
-		font: 'bold',
+		width: 'auto',
+		height: '60px',
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'space-between',
 	},
-	sectionDesktop: {
-		display: 'none',
-		[theme.breakpoints.up('md')]: {
-			display: 'flex',
+
+	logo: {
+		display: 'flex',
+		alignItems: 'center',
+		fontSize: '30px',
+		marginRight: '10px',
+		height: '100%',
+	},
+
+	item: {
+		padding: '0 1.1vw',
+		fontSize: '20px',
+		fontWeight: '600',
+		height: '100%',
+		display: 'flex',
+		alignItems: 'center',
+		'&:hover': {
+			backgroundColor: 'rgba(107, 107, 107, 0.63)',
+			cursor: 'pointer',
 		},
 	},
-	sectionMobile: {
+
+	items: {
 		display: 'flex',
-		[theme.breakpoints.up('md')]: {
-			display: 'none',
+		height: '100%',
+	},
+	icon: {
+		paddingTop: '4px',
+		paddingLeft: '3px',
+		'&:hover': {
+			color: '#fff',
 		},
 	},
 }));
 
 export default function NavBar() {
 	const classes = useStyles();
-	const [anchorEl, setAnchorEl] = React.useState(null);
-	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
-	const isMenuOpen = Boolean(anchorEl);
-	const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-	function handleProfileMenuOpen(event) {
-		setAnchorEl(event.currentTarget);
-	}
-
-	function handleMobileMenuClose() {
-		setMobileMoreAnchorEl(null);
-	}
-
-	function handleMenuClose() {
-		setAnchorEl(null);
-		handleMobileMenuClose();
-	}
-
-	function handleMobileMenuOpen(event) {
-		setMobileMoreAnchorEl(event.currentTarget);
-	}
-
-	const menuId = 'primary-search-account-menu';
-	//   const renderMenu = (
-	//     <Menu
-	//       anchorEl={anchorEl}
-	//       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-	//       id={menuId}
-	//       keepMounted
-	//       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-	//       open={isMenuOpen}
-	//       onClose={handleMenuClose}
-	//     >
-	//       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-	//       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-	//     </Menu>
-	//   );
-
-	const mobileMenuId = 'primary-search-account-menu-mobile';
-	const renderMobileMenu = (
-		<Menu
-			anchorEl={mobileMoreAnchorEl}
-			anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-			id={mobileMenuId}
-			keepMounted
-			transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-			open={isMobileMenuOpen}
-			onClose={handleMobileMenuClose}>
-			<MenuItem>
-				<p>Pricing</p>
-			</MenuItem>
-			<MenuItem>
-				<p>Learn</p>
-			</MenuItem>
-			<MenuItem>
-				<p>Log in</p>
-			</MenuItem>
-			<MenuItem>
-				<p>Free Trial</p>
-			</MenuItem>
-		</Menu>
-	);
 
 	return (
-		<div className={classes.grow}>
-			<AppBar position='static'>
-				<Toolbar className={classes.toolbar}>
-					<Computer className={classes.icon} />
-					<Typography className={classes.title} variant='h5' noWrap>
+		<div position='static'>
+			<div className={classes.toolbar}>
+				<div className={classes.items}>
+					<div className={classes.item} style={{ fontSize: '26px' }}>
 						CompanyName
-					</Typography>
-					<List component='nav' className='meniu' aria-controls={menuId}>
-						<ListItem component='div'>
-							<ListItemText inset>
-								<TypoGraphy color='inherit' variant='title'>
-									Start
-								</TypoGraphy>
-							</ListItemText>
-
-							<ListItemText inset>
-								<TypoGraphy color='inherit' variant='title'>
-									Sell
-								</TypoGraphy>
-							</ListItemText>
-
-							<ListItemText inset>
-								<TypoGraphy color='inherit' variant='title'>
-									Market
-								</TypoGraphy>
-							</ListItemText>
-
-							<ListItemText inset>
-								<TypoGraphy color='inherit' variant='title'>
-									Manage
-								</TypoGraphy>
-							</ListItemText>
-						</ListItem>
-					</List>
-					<div className={classes.grow} />
-					<div className={classes.sectionDesktop}>
-						<IconButton color='inherit'>Pricing</IconButton>
-						<IconButton color='inherit'>Learn</IconButton>
-						<IconButton color='inherit'>Log in</IconButton>
-						<IconButton color='inherit'>Free Trial</IconButton>
 					</div>
-					<div className={classes.sectionMobile}>
-						<IconButton
-							aria-label='Show more'
-							aria-controls={mobileMenuId}
-							aria-haspopup='true'
-							onClick={handleMobileMenuOpen}
-							color='inherit'>
-							<MoreIcon />
-						</IconButton>
+					<div className={classes.item}>
+						Start <Arrow className={classes.icon} />
 					</div>
-				</Toolbar>
-			</AppBar>
-			{renderMobileMenu}
+					<div className={classes.item}>
+						Sell <Arrow className={classes.icon} />
+					</div>
+					<div className={classes.item}>
+						Market <Arrow className={classes.icon} />
+					</div>
+					<div className={classes.item}>
+						Manage <Arrow className={classes.icon} />
+					</div>
+				</div>
+
+				<div className={classes.items}>
+					<div className={classes.item}>Pricing</div>
+					<div className={classes.item}>
+						Learn <Arrow className={classes.icon} />
+					</div>
+					<div className={classes.item}>Log in</div>
+					<div className={classes.item}>Free Trial</div>
+				</div>
+			</div>
 		</div>
 	);
 }

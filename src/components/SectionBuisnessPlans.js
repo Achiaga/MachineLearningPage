@@ -119,6 +119,7 @@ const useStyles = makeStyles(theme => ({
 		display: 'flex',
 		alignItems: 'inherit',
 		paddingLeft: '20px',
+		fontWeight: '700',
 	},
 }));
 

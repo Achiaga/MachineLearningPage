@@ -124,9 +124,10 @@ const useStyles = makeStyles(theme => ({
 		display: 'flex',
 		justifyContent: 'center',
 		width: '100px',
-		margin: 'auto',
+		margin: '0 auto',
 		padding: '15px',
-		marginBottom: '40px',
+
+		// marginBottom: '40px',
 		'&:hover': {
 			backgroundColor: theme.palette.primary.lightText,
 			fontWeight: '700',
@@ -181,7 +182,9 @@ export default function CenteredGrid() {
 					</div>
 				</div>
 			</div>
-			<div className={classes.learn}>Learn More</div>
+			<div style={{ height: '8vw' }}>
+				<div className={classes.learn}>Learn More</div>
+			</div>
 		</div>
 	);
 }
