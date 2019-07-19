@@ -1,6 +1,5 @@
 import React from 'react';
-import { makeStyles, rgbToHex } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import PLayCircleOutline from '@material-ui/icons/PlayCircleOutline';
@@ -90,6 +89,7 @@ export default function CenteredGrid() {
 						<PLayCircleOutline className={classes.icon} />
 						<img
 							src='https://images.unsplash.com/photo-1525475711852-ed23365b4d11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+							alt='Video'
 							height='100%'
 							width='100%'
 						/>

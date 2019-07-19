@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import NavBar from './components/NavBar.js';
-import SectionHero from './components/SectionHero';
-import SectionImages from './components/SectionImages';
-import SectionCompanyInfo from './components/SectionCompanyInfo';
-import SectionAwards from './components/SectionAwards';
-import SectionBuisnessPlans from './components/SectionBuisnessPlans';
-import Footer from './components/Footer';
+import NavBar from './containers/NavBar.js';
+import SectionHero from './containers/SectionHero';
+import SectionImages from './containers/SectionImages';
+import SectionCompanyInfo from './containers/SectionCompanyInfo';
+import SectionAwards from './containers/SectionAwards';
+import SectionBuisnessPlans from './containers/SectionBuisnessPlans';
+import Footer from './containers/Footer';
 
 class App extends Component {
 	render() {

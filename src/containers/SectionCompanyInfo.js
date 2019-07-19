@@ -103,6 +103,7 @@ export default function CenteredGrid() {
 					<div className={classes.imageLeft}>
 						<img
 							src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1902&q=80'
+							alt='Start'
 							height='100%'
 							width='80%'
 						/>
@@ -134,6 +135,7 @@ export default function CenteredGrid() {
 					<div className={classes.imageRight}>
 						<img
 							src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+							alt='Sell'
 							height='100%'
 							width='85%'
 						/>
@@ -143,6 +145,7 @@ export default function CenteredGrid() {
 					<div className={classes.imageLeft}>
 						<img
 							src='https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+							alt='Market'
 							height='100%'
 							width='80%'
 						/>

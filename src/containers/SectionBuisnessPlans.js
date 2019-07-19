@@ -32,7 +32,6 @@ const useStyles = makeStyles(theme => ({
 		border: '1px solid white',
 		borderRadius: '2%',
 		display: 'flex',
-		justifyContent: 'center',
 		alignItems: 'center',
 		height: '80%',
 		justifyContent: 'space-around',
@@ -52,7 +51,6 @@ const useStyles = makeStyles(theme => ({
 		border: '1px solid white',
 		borderRadius: '2%',
 		display: 'flex',
-		justifyContent: 'center',
 		alignItems: 'center',
 		height: '80%',
 		justifyContent: 'space-around',
@@ -71,7 +69,6 @@ const useStyles = makeStyles(theme => ({
 		border: '1px solid white',
 		borderRadius: '2%',
 		display: 'flex',
-		justifyContent: 'center',
 		alignItems: 'center',
 		height: '80%',
 		justifyContent: 'space-around',
@@ -90,7 +87,6 @@ const useStyles = makeStyles(theme => ({
 		border: '1px solid white',
 		borderRadius: '2%',
 		display: 'flex',
-		justifyContent: 'center',
 		alignItems: 'center',
 		height: '80%',
 		justifyContent: 'space-around',
@@ -131,7 +127,7 @@ export default function CenteredGrid() {
 			<div className={classes.gridContainer}>
 				<div className={classes.item1}>
 					<div className={classes.icon}>
-						<img src={StartUp} width='90px' />
+						<img src={StartUp} width='90px' alt='Solution' />
 					</div>
 					<div>
 						<div className={classes.highlight}>
@@ -149,7 +145,7 @@ export default function CenteredGrid() {
 				</div>
 				<div className={classes.item2}>
 					<div className={classes.icon}>
-						<img src={Prediction} width='90px' />
+						<img src={Prediction} width='90px' alt='Productivity' />
 					</div>
 					<div>
 						<div className={classes.highlight}>
@@ -168,7 +164,7 @@ export default function CenteredGrid() {
 				</div>
 				<div className={classes.item3}>
 					<div className={classes.icon}>
-						<img src={Chip} width='90px' />
+						<img src={Chip} width='90px' alt='AI' />
 					</div>
 					<div>
 						<div className={classes.highlight}>
@@ -187,7 +183,7 @@ export default function CenteredGrid() {
 				</div>
 				<div className={classes.item4}>
 					<div className={classes.icon}>
-						<img src={Head} width='90px' />
+						<img src={Head} width='90px' alt='Democratization' />
 					</div>
 					<div>
 						<div className={classes.highlight}>

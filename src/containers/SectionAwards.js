@@ -145,7 +145,7 @@ export default function CenteredGrid() {
 			<div className={classes.root}>
 				<div className={classes.item1}>
 					<div className={classes.circle}>
-						<img src={Database} width='70%' />
+						<img src={Database} width='70%' alt='Clean' />
 					</div>
 					<div className={classes.text}>
 						Clean <br />& Wrangler
@@ -153,7 +153,7 @@ export default function CenteredGrid() {
 				</div>
 				<div className={classes.item2}>
 					<div className={classes.circle}>
-						<img src={Digital} width='70%' />
+						<img src={Digital} width='70%' alt='Build' />
 					</div>
 					<div className={classes.text}>
 						Build <br />& Apply
@@ -161,7 +161,7 @@ export default function CenteredGrid() {
 				</div>
 				<div className={classes.item3}>
 					<div className={classes.circle}>
-						<img src={Visualization} width='70%' />
+						<img src={Visualization} width='70%' alt='Mining' />
 					</div>
 					<div className={classes.text}>
 						Mining <br />& Visualization
@@ -169,13 +169,13 @@ export default function CenteredGrid() {
 				</div>
 				<div className={classes.item4}>
 					<div className={classes.circle}>
-						<img src={Robot} width='70%' />
+						<img src={Robot} width='70%' alt='Deploy' />
 					</div>
 					<div className={classes.text}>Deploy to Production</div>
 				</div>
 				<div className={classes.item5}>
 					<div className={classes.circle}>
-						<img src={Ai} width='70%' />
+						<img src={Ai} width='70%' alt='Monitor' />
 					</div>
 					<div className={classes.text}>
 						Monitor <br />& Adjust
