@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
 	root: {
 		flexGrow: 1,
 		backgroundColor: theme.palette.primary.main,
-		paddingTop: '0.2vw',
+		paddingTop: '3vw',
 		padding: '0 6vw',
 		height: '40vw',
 	},

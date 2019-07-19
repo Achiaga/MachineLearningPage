@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 // import Computer from '@material-ui/icons/Computer';
 import Arrow from '@material-ui/icons/KeyboardArrowDown';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Slide from '@material-ui/core/Slide';
 
 const useStyles = makeStyles(theme => ({
 	toolbar: {
@@ -66,12 +68,28 @@ const useStyles = makeStyles(theme => ({
 			fontWeight: '600',
 			'&:hover': {
 				backgroundColor: 'white',
+				border: '1px solid',
+				borderColor: theme.palette.primary.dark,
 			},
 		},
 	},
 }));
 
-export default function NavBar() {
+function HideOnScroll(props) {
+	const { children, window } = props;
+	// Note that you normally won't need to set the window ref as useScrollTrigger
+	// will default to window.
+	// This is only being set here because the demo is in an iframe.
+	const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
+	return (
+		<Slide appear={false} direction='down' in={!trigger}>
+			{children}
+		</Slide>
+	);
+}
+
+export default function NavBar(props) {
 	const classes = useStyles();
 	const [drop, setDrop] = useState({});
 
@@ -104,113 +122,120 @@ export default function NavBar() {
 		);
 	};
 	return (
-		<div position='static'>
-			<div className={classes.toolbar}>
-				<div className={classes.items}>
-					<div className={classes.item} style={{ fontSize: '26px' }}>
-						CompanyName
-					</div>
-
-					<div
-						style={{ maxWidth: '90px' }}
-						className={classes.navItem}
-						onMouseLeave={handleOut}>
-						<div
-							className={classes.item}
-							id={'start'}
-							onMouseEnter={handleOver}>
-							Start <Arrow className={classes.icon} />
+		<HideOnScroll {...props}>
+			<div
+				position='fixed'
+				style={{ position: 'fixed', width: '100%', zIndex: 100 }}>
+				<div className={classes.toolbar}>
+					<div className={classes.items}>
+						<div className={classes.item} style={{ fontSize: '26px' }}>
+							CompanyName
 						</div>
-						{drop['start'] ? (
-							<DropDown
+
+						<div
+							style={{ maxWidth: '90px' }}
+							className={classes.navItem}
+							onMouseLeave={handleOut}>
+							<div
+								className={classes.item}
 								id={'start'}
-								item1={'Overview'}
-								item2={'Features'}
-								item3={'Samples'}
-							/>
-						) : null}
-					</div>
-
-					<div
-						style={{ maxWidth: '80px' }}
-						className={classes.navItem}
-						onMouseLeave={handleOut}>
-						<div className={classes.item} id={'sell'} onMouseEnter={handleOver}>
-							Sell <Arrow className={classes.icon} />
+								onMouseEnter={handleOver}>
+								Start <Arrow className={classes.icon} />
+							</div>
+							{drop['start'] ? (
+								<DropDown
+									id={'start'}
+									item1={'Overview'}
+									item2={'Features'}
+									item3={'Samples'}
+								/>
+							) : null}
 						</div>
-						{drop['sell'] ? (
-							<DropDown
-								item1={'Data Analyst'}
-								item2={'Automated Marchine Learning'}
-								item3={'Software'}
-							/>
-						) : null}
-					</div>
 
-					<div
-						style={{ maxWidth: '110px' }}
-						className={classes.navItem}
-						id={'market'}
-						onMouseLeave={handleOut}>
 						<div
-							className={classes.item}
+							style={{ maxWidth: '80px' }}
+							className={classes.navItem}
+							onMouseLeave={handleOut}>
+							<div
+								className={classes.item}
+								id={'sell'}
+								onMouseEnter={handleOver}>
+								Sell <Arrow className={classes.icon} />
+							</div>
+							{drop['sell'] ? (
+								<DropDown
+									item1={'Data Analyst'}
+									item2={'Automated Marchine Learning'}
+									item3={'Software'}
+								/>
+							) : null}
+						</div>
+
+						<div
+							style={{ maxWidth: '110px' }}
+							className={classes.navItem}
 							id={'market'}
-							onMouseEnter={handleOver}>
-							Market <Arrow className={classes.icon} />
+							onMouseLeave={handleOut}>
+							<div
+								className={classes.item}
+								id={'market'}
+								onMouseEnter={handleOver}>
+								Market <Arrow className={classes.icon} />
+							</div>
+							{drop['market'] ? (
+								<DropDown
+									item1={'Plans'}
+									item2={'Competitors'}
+									item3={'Advantages'}
+								/>
+							) : null}
 						</div>
-						{drop['market'] ? (
-							<DropDown
-								item1={'Plans'}
-								item2={'Competitors'}
-								item3={'Advantages'}
-							/>
-						) : null}
+
+						<div
+							style={{ maxWidth: '120px' }}
+							className={classes.navItem}
+							onMouseLeave={handleOut}>
+							<div
+								className={classes.item}
+								id={'manage'}
+								onMouseEnter={handleOver}>
+								Manage <Arrow className={classes.icon} />
+							</div>
+							{drop['manage'] ? (
+								<DropDown
+									item1={'Data Analyst'}
+									item2={'Automated Marchine Learning'}
+									item3={'Software'}
+								/>
+							) : null}
+						</div>
 					</div>
 
-					<div
-						style={{ maxWidth: '120px' }}
-						className={classes.navItem}
-						onMouseLeave={handleOut}>
+					<div className={classes.items}>
+						<div className={classes.item}>Pricing</div>
 						<div
-							className={classes.item}
-							id={'manage'}
-							onMouseEnter={handleOver}>
-							Manage <Arrow className={classes.icon} />
+							style={{ maxWidth: '100px' }}
+							className={classes.navItem}
+							onMouseLeave={handleOut}>
+							<div
+								className={classes.item}
+								id={'learn'}
+								onMouseEnter={handleOver}>
+								Learn <Arrow className={classes.icon} />
+							</div>
+							{drop['learn'] ? (
+								<DropDown
+									item1={'Data Analyst'}
+									item2={'Automated Marchine Learning'}
+									item3={'Software'}
+								/>
+							) : null}
 						</div>
-						{drop['manage'] ? (
-							<DropDown
-								item1={'Data Analyst'}
-								item2={'Automated Marchine Learning'}
-								item3={'Software'}
-							/>
-						) : null}
+						<div className={classes.item}>Log in</div>
+						<div className={classes.item}>Free Trial</div>
 					</div>
-				</div>
-
-				<div className={classes.items}>
-					<div className={classes.item}>Pricing</div>
-					<div
-						style={{ maxWidth: '100px' }}
-						className={classes.navItem}
-						onMouseLeave={handleOut}>
-						<div
-							className={classes.item}
-							id={'learn'}
-							onMouseEnter={handleOver}>
-							Learn <Arrow className={classes.icon} />
-						</div>
-						{drop['learn'] ? (
-							<DropDown
-								item1={'Data Analyst'}
-								item2={'Automated Marchine Learning'}
-								item3={'Software'}
-							/>
-						) : null}
-					</div>
-					<div className={classes.item}>Log in</div>
-					<div className={classes.item}>Free Trial</div>
 				</div>
 			</div>
-		</div>
+		</HideOnScroll>
 	);
 }
